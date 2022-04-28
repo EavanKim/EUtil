@@ -39,6 +39,15 @@
     <ClInclude Include="EString.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="EAllocator.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="EArray.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ESet.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EUtil_Lib.cpp">
@@ -57,6 +66,15 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="EString.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="EAllocator.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="EArray.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ESet.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

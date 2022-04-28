@@ -27,6 +27,7 @@ var menudata={children:[
 {text:"관련된 페이지",url:"pages.html"},
 {text:"클래스",url:"annotated.html",children:[
 {text:"클래스 목록",url:"annotated.html"},
-{text:"클래스 색인",url:"classes.html"}]},
+{text:"클래스 색인",url:"classes.html"},
+{text:"클래스 계통도",url:"hierarchy.html"}]},
 {text:"파일들",url:"files.html",children:[
 {text:"파일 목록",url:"files.html"}]}]}

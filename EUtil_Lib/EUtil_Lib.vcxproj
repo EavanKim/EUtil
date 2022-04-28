@@ -151,21 +151,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="EAllocator.h" />
     <ClInclude Include="EBase.h" />
     <ClInclude Include="EDefine.h" />
     <ClInclude Include="EException.h" />
     <ClInclude Include="EInclude.h" />
     <ClInclude Include="EPtr.h" />
+    <ClInclude Include="ESet.h" />
     <ClInclude Include="EString.h" />
+    <ClInclude Include="EArray.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="EAllocator.cpp" />
     <ClCompile Include="EBase.cpp" />
     <ClCompile Include="EException.cpp" />
     <ClCompile Include="EPtr.cpp" />
+    <ClCompile Include="ESet.cpp" />
     <ClCompile Include="EString.cpp" />
     <ClCompile Include="EUtil_Lib.cpp" />
+    <ClCompile Include="EArray.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

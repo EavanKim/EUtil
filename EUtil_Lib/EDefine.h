@@ -10,6 +10,7 @@
 * 
 */
 
+typedef volatile long		EBOOL;
 typedef char				SCHAR;
 typedef wchar_t				ECHAR;
 typedef int32_t				EINT;

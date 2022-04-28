@@ -71,20 +71,21 @@ $(function() {
 <div class="contents">
 <div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">typedef</span> <span class="keywordtype">char</span>                SCHAR;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">typedef</span> <span class="keywordtype">wchar_t</span>             ECHAR;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">typedef</span> int32_t             EINT;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">typedef</span> int64_t             EINT64;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">typedef</span> <span class="keywordtype">float</span>               EFLOAT;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">typedef</span> <span class="keywordtype">double</span>              EDOUBLE;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keywordtype">long</span>       EVINT;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>  EVINT64;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#if _WIN64</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">typedef</span> int64_t EPTRINT;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">typedef</span> int32_t EPTRINT;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keywordtype">long</span>       EBOOL;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">typedef</span> <span class="keywordtype">char</span>                SCHAR;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">typedef</span> <span class="keywordtype">wchar_t</span>             ECHAR;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">typedef</span> int32_t             EINT;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">typedef</span> int64_t             EINT64;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">typedef</span> <span class="keywordtype">float</span>               EFLOAT;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">typedef</span> <span class="keywordtype">double</span>              EDOUBLE;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keywordtype">long</span>       EVINT;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">typedef</span> <span class="keyword">volatile</span> <span class="keywordtype">long</span> <span class="keywordtype">long</span>  EVINT64;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#if _WIN64</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">typedef</span> int64_t EPTRINT;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">typedef</span> int32_t EPTRINT;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

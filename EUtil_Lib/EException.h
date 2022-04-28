@@ -15,9 +15,12 @@ namespace Eavan
 	class EException
 	{
 	public:
+		explicit EException();
+		explicit EException(const EString& _exceptionDescript);
+		explicit EException(const EString& _exceptionDescript, EVINT64 _returnCode);
 
 	private:
-		
+		EString m_ExceptionDescription;
 	};
 }
 
