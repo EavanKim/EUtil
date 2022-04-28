@@ -2,6 +2,16 @@
 
 namespace Eavan
 {
+	EBase::EBase()
+	{
+		InterlockedExchange64(&m_refCount, 0);
+	}
+
+	EBase::~EBase()
+	{
+		throw std::exception("");
+	}
+
 	EVINT64 EBase::IncreaseReferenceCount()
 	{
 		InterlockedIncrement64(&m_refCount);
