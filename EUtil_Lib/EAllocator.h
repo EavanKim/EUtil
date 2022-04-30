@@ -13,7 +13,7 @@ namespace Eavan
 	*/
 
 	template<typename T>
-	class EAllocator : std::allocator<T>
+	class EAllocator : public std::allocator<T>
 	{
 	public:
 		template<class C>

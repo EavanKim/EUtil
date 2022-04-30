@@ -4,6 +4,8 @@
 #include <iostream>
 #include <exception>
 #include <memory>
+#include "ELock.h"
+#include "EScopeLock.h"
 #include "EString.h"
 #include "EAllocator.h"
 #include "EDefine.h"

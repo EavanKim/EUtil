@@ -48,6 +48,12 @@
     <ClInclude Include="ESet.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="EScopeLock.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="ELock.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EUtil_Lib.cpp">
@@ -75,6 +81,12 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="ESet.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="EScopeLock.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="ELock.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
