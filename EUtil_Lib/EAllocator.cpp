@@ -4,8 +4,7 @@ namespace Eavan
 {
 	template<typename T>
 	EAllocator<T>::EAllocator()
-		: std::allocator<T>()
-		, m_heap(INVALID_HANDLE_VALUE)
+		: m_heap(INVALID_HANDLE_VALUE)
 	{
 		m_heap = HeapCreate(0, sizeof(T) * 10, sizeof(T) * 1024);
 		if (m_heap == INVALID_HANDLE_VALUE || m_heap == NULL)
@@ -16,8 +15,7 @@ namespace Eavan
 
 	template<typename T>
 	EAllocator<T>::EAllocator(const EAllocator<T>& _allocator)
-		: std::allocator<T>()
-		, m_heap(INVALID_HANDLE_VALUE)
+		: m_heap(INVALID_HANDLE_VALUE)
 	{
 		if (m_heap != INVALID_HANDLE_VALUE)
 		{

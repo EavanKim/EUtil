@@ -155,6 +155,7 @@
     <ClInclude Include="EBase.h" />
     <ClInclude Include="EDefine.h" />
     <ClInclude Include="EException.h" />
+    <ClInclude Include="EHash.h" />
     <ClInclude Include="EInclude.h" />
     <ClInclude Include="ELock.h" />
     <ClInclude Include="EPtr.h" />
@@ -169,6 +170,7 @@
     <ClCompile Include="EAllocator.cpp" />
     <ClCompile Include="EBase.cpp" />
     <ClCompile Include="EException.cpp" />
+    <ClCompile Include="EHash.cpp" />
     <ClCompile Include="ELock.cpp" />
     <ClCompile Include="EPtr.cpp" />
     <ClCompile Include="EScopeLock.cpp" />

@@ -13,15 +13,9 @@ namespace Eavan
 	*/
 
 	template<typename T>
-	class EAllocator : public std::allocator<T>
+	class EAllocator
 	{
 	public:
-		template<class C>
-		struct rebind 
-		{
-			typedef std::allocator<C> other;
-		};
-
 		explicit EAllocator();
 		explicit EAllocator(const EAllocator<T>& _allocator);
 

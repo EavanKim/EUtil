@@ -54,6 +54,9 @@
     <ClInclude Include="ELock.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="EHash.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EUtil_Lib.cpp">
@@ -87,6 +90,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="ELock.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="EHash.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
