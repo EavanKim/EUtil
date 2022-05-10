@@ -12,7 +12,7 @@ namespace Eavan
 	*
 	*/
 
-	class EString
+	class E_F_DLL EString
 	{
 	public:
 

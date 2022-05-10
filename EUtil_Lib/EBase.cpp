@@ -1,4 +1,4 @@
-#include "pch.h"
+﻿#include "pch.h"
 
 namespace Eavan
 {
@@ -9,7 +9,7 @@ namespace Eavan
 
 	EBase::~EBase()
 	{
-		throw std::exception("");
+
 	}
 
 	EVINT64 EBase::IncreaseReferenceCount()

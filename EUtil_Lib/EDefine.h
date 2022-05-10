@@ -20,6 +20,12 @@ typedef double				EDOUBLE;
 typedef volatile long		EVINT;
 typedef volatile long long	EVINT64;
 
+#ifdef _E_FRAMEWORK_EXPORT
+#define E_F_DLL __declspec(dllexport)
+#else
+#define E_F_DLL __declspec(dllimport)
+#endif
+
 #if _WIN64
 typedef int64_t EPTRINT;
 #else

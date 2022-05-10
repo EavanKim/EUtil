@@ -12,7 +12,7 @@ namespace Eavan
 	*
 	*/
 
-	class EException
+	class E_F_DLL EException
 	{
 	public:
 		explicit EException();

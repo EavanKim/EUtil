@@ -40,7 +40,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -120,10 +120,12 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG; _E_FRAMEWORK_EXPORT;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -155,6 +157,7 @@
     <ClInclude Include="EBase.h" />
     <ClInclude Include="EDefine.h" />
     <ClInclude Include="EException.h" />
+    <ClInclude Include="EHash.h" />
     <ClInclude Include="EInclude.h" />
     <ClInclude Include="ELock.h" />
     <ClInclude Include="EPtr.h" />
@@ -169,8 +172,8 @@
     <ClCompile Include="EAllocator.cpp" />
     <ClCompile Include="EBase.cpp" />
     <ClCompile Include="EException.cpp" />
+    <ClCompile Include="EHash.cpp" />
     <ClCompile Include="ELock.cpp" />
-    <ClCompile Include="EPtr.cpp" />
     <ClCompile Include="EScopeLock.cpp" />
     <ClCompile Include="ESet.cpp" />
     <ClCompile Include="EString.cpp" />
