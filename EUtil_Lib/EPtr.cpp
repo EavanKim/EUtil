@@ -1,9 +1,9 @@
-#include "pch.h"
+﻿#include "pch.h"
 
 namespace Eavan
 {
 	template<class C>
-	inline EPtr<C>::EPtr(EBase* _ptr)
+	EPtr<C>::EPtr(C* _ptr)
 	{
 		if (m_ptr)
 		{
@@ -12,7 +12,7 @@ namespace Eavan
 	}
 
 	template<class C>
-	inline EPtr<C>::~EPtr()
+	EPtr<C>::~EPtr()
 	{
 		if (!m_ptr)
 		{

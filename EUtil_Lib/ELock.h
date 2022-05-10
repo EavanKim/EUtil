@@ -2,7 +2,7 @@
 
 namespace Eavan
 {
-	class ELock
+	class E_F_DLL ELock
 	{
 	public:
 		explicit ELock();

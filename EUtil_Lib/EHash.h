@@ -3,7 +3,7 @@
 namespace Eavan
 {
 	template<typename T>
-	class EHash
+	class E_F_DLL EHash
 	{
 	public:
 

@@ -13,7 +13,7 @@ namespace Eavan
 	*/
 
 	template<typename T>
-	class EAllocator
+	class E_F_DLL EAllocator
 	{
 	public:
 		explicit EAllocator();
@@ -21,11 +21,18 @@ namespace Eavan
 
 		virtual ~EAllocator();
 
-		virtual T* allocate(size_t _size, const void* _ptr = nullptr);
-		virtual void delocate(void* _ptr, size_t);
+		T* allocate(size_t _size, const T* _ptr = nullptr);
+		void reallocate(size_t _size, const T* _ptr);
+		void delocate(T* _ptr, size_t);
+
+		void CheckThreadVaildation(EBOOL& _IsOK);
+		void CheckMemoryVaildation(T* _ptr, EBOOL& _IsOK);
 
 	private:
-		HANDLE m_heap;
+		EVINT64 m_memorySize = 0;
+		EVINT64 m_allocCount = 0;
+		EVINT64 m_threadID = 0;
+		HANDLE m_heap = INVALID_HANDLE_VALUE;
 	};
 }
 

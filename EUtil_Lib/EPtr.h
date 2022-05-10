@@ -13,10 +13,10 @@ namespace Eavan
 	*/
 
 	template <class C = EBase>
-	class EPtr
+	class E_F_DLL EPtr
 	{
 	public:
-		explicit EPtr(EBase* _ptr);
+		explicit EPtr(C* _ptr);
 		~EPtr();
 
 	private:

@@ -2,7 +2,6 @@
 //
 
 #include <iostream>
-#include <vector>
 #include "EInclude.h"
 
 class TestClass : public Eavan::EBase
@@ -16,8 +15,8 @@ int main()
 	Eavan::EPtr<TestClass> Test1(Test);
 	Eavan::EPtr<TestClass> Test2(Test1);
 	Eavan::EPtr<TestClass> Test3(Test2);
-	
-	std::vector<TestClass, Eavan::EAllocator<TestClass>> TestVector;
+
+	Eavan::EAllocator<TestClass> Alloc;
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴

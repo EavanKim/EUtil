@@ -3,7 +3,7 @@
 namespace Eavan
 {
 	template<typename DataType, class Alloc = EAllocator<DataType>>
-	class EArray : public EBase
+	class E_F_DLL EArray : public EBase
 	{
 	public:
 		explicit EArray();

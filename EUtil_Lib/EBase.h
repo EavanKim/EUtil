@@ -12,7 +12,7 @@ namespace Eavan
 	*
 	*/
 
-	class EBase
+	class E_F_DLL EBase
 	{
 	public:
 		explicit EBase();
