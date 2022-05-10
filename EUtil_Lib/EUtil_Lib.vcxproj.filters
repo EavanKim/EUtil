@@ -68,9 +68,6 @@
     <ClCompile Include="EBase.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="EPtr.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="EException.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>

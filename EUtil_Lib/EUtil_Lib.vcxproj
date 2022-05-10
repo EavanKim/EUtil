@@ -174,7 +174,6 @@
     <ClCompile Include="EException.cpp" />
     <ClCompile Include="EHash.cpp" />
     <ClCompile Include="ELock.cpp" />
-    <ClCompile Include="EPtr.cpp" />
     <ClCompile Include="EScopeLock.cpp" />
     <ClCompile Include="ESet.cpp" />
     <ClCompile Include="EString.cpp" />
