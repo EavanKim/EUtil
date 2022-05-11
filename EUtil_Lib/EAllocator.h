@@ -45,7 +45,7 @@ namespace Eavan
 		m_heap = HeapCreate(0, sizeof(T) * 10, sizeof(T) * 1024);
 		if (m_heap == INVALID_HANDLE_VALUE || m_heap == NULL)
 		{
-			throw EException();
+			throw 0;
 		}
 	}
 

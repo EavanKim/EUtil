@@ -11,13 +11,25 @@ namespace Eavan
 	* @version 0.0.1
 	*
 	*/
-
 	class E_F_DLL EString
 	{
 	public:
+		static EString Printf(const wchar_t* _format, ...);
+		static wchar_t* ANSI_TO_UNICODE(const char* _string);
+		static wchar_t* UTF8_TO_UNICODE(const char* _string);
+		static char* UNICODE_TO_UTF8(const wchar_t* _string);
+
+		explicit EString();
+		explicit EString(const wchar_t* _string);
+		~EString();
+
+		const wchar_t* getData();
+		const wchar_t* operator*();
+		char* CreateUTF8();
 
 	private:
-
+		EVINT64 m_length;
+		EPtr<wchar_t> m_data;
 	};
 }
 

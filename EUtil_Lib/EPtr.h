@@ -21,6 +21,10 @@ namespace Eavan
 		explicit EPtr(EPtr<C, Allocator>& _ptr);
 		~EPtr();
 
+		C* operator*();
+		C* operator->();
+		void operator=(EBase* _ptr);
+
 	private:
 		void DestroyPtr();
 
@@ -37,10 +41,7 @@ namespace Eavan
 	EPtr<C, Allocator>::EPtr(C* _ptr)
 		: m_ptr(nullptr)
 	{
-		if (m_ptr)
-			DestroyPtr();
-
-		m_ptr = _ptr;
+		m_ptr = reinterpret_cast<EBase*>(_ptr);
 		m_ptr->IncreaseReferenceCount();
 	}
 
@@ -48,9 +49,6 @@ namespace Eavan
 	EPtr<C, Allocator>::EPtr(EPtr<C, Allocator>& _ptr)
 		: m_ptr(nullptr)
 	{
-		if (m_ptr)
-			DestroyPtr();
-
 		m_ptr = _ptr.m_ptr;
 		m_ptr->IncreaseReferenceCount();
 	}
@@ -59,6 +57,29 @@ namespace Eavan
 	EPtr<C, Allocator>::~EPtr()
 	{
 		DestroyPtr();
+	}
+
+	template<class C, class Allocator>
+	inline C* EPtr<C, Allocator>::operator*()
+	{
+		return reinterpret_cast<C*>(m_ptr);
+	}
+
+	template<class C, class Allocator>
+	inline C* EPtr<C, Allocator>::operator->()
+	{
+		return reinterpret_cast<C*>(m_ptr);
+	}
+
+	template<class C, class Allocator>
+	inline void EPtr<C, Allocator>::operator=(EBase* _ptr)
+	{
+		DestroyPtr();
+
+		m_ptr = _ptr;
+
+		if (nullptr != m_ptr)
+			m_ptr->IncreaseReferenceCount();
 	}
 
 	template<class C, class Allocator>

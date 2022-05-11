@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\EUtil">
+      <UniqueIdentifier>{5ad3d9bd-e61b-4c59-805e-f82f000364b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\EUtil">
+      <UniqueIdentifier>{8bc6688f-03b5-4bef-b480-d94afc2e9f6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\EUtil\Object">
+      <UniqueIdentifier>{c1992dfc-8ef3-4de9-91ab-5b2510f5362d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="헤더 파일\EUtil\Object\Container">
+      <UniqueIdentifier>{863575ff-0132-412d-b067-3c5e43254cab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -21,75 +33,75 @@
     <ClInclude Include="pch.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="EBase.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="EAllocator.h">
+      <Filter>헤더 파일\EUtil</Filter>
     </ClInclude>
     <ClInclude Include="EDefine.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="EInclude.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="EPtr.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\EUtil</Filter>
     </ClInclude>
     <ClInclude Include="EException.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\EUtil</Filter>
     </ClInclude>
-    <ClInclude Include="EString.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="EInclude.h">
+      <Filter>헤더 파일\EUtil</Filter>
     </ClInclude>
-    <ClInclude Include="EAllocator.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="EArray.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="ESet.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="EScopeLock.h">
-      <Filter>헤더 파일</Filter>
+    <ClInclude Include="EBase.h">
+      <Filter>헤더 파일\EUtil\Object</Filter>
     </ClInclude>
     <ClInclude Include="ELock.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\EUtil\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="EPtr.h">
+      <Filter>헤더 파일\EUtil\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="EScopeLock.h">
+      <Filter>헤더 파일\EUtil\Object</Filter>
     </ClInclude>
     <ClInclude Include="EHash.h">
-      <Filter>헤더 파일</Filter>
+      <Filter>헤더 파일\EUtil\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="EString.h">
+      <Filter>헤더 파일\EUtil\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="EArray.h">
+      <Filter>헤더 파일\EUtil\Object\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="ESet.h">
+      <Filter>헤더 파일\EUtil\Object\Container</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="EUtil_Lib.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="EBase.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="EException.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="EString.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="EAllocator.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\EUtil</Filter>
     </ClCompile>
     <ClCompile Include="EArray.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\EUtil</Filter>
     </ClCompile>
-    <ClCompile Include="ESet.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="EBase.cpp">
+      <Filter>소스 파일\EUtil</Filter>
     </ClCompile>
-    <ClCompile Include="EScopeLock.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="ELock.cpp">
-      <Filter>소스 파일</Filter>
+    <ClCompile Include="EException.cpp">
+      <Filter>소스 파일\EUtil</Filter>
     </ClCompile>
     <ClCompile Include="EHash.cpp">
+      <Filter>소스 파일\EUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="ELock.cpp">
+      <Filter>소스 파일\EUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="EScopeLock.cpp">
+      <Filter>소스 파일\EUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="ESet.cpp">
+      <Filter>소스 파일\EUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="EString.cpp">
+      <Filter>소스 파일\EUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="EUtil_Lib.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

@@ -26,6 +26,8 @@ int main()
 	Eavan::EPtr<TestClass> Test1(Test);
 	Eavan::EPtr<TestClass> Test2(Test1);
 	Eavan::EPtr<TestClass> Test3(Test2);
+	Eavan::EPtr<Eavan::EString> TestString(new Eavan::EString(L"TestString"));
+
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
