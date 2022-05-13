@@ -14,3 +14,4 @@
 #include "EException.h"
 #include "EArray.h"
 #include "ESet.h"
+#include "EHash.h"
