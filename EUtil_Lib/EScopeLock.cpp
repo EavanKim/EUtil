@@ -2,14 +2,14 @@
 
 namespace Eavan
 {
-	EScopeLock::EScopeLock(ELock& _lock)
+	EScopeLock::EScopeLock(ELock* _lock)
 		: m_lock(_lock)
 	{
-		m_lock.Lock();
+		m_lock->Lock();
 	}
 
 	EScopeLock::~EScopeLock()
 	{
-		m_lock.Release();
+		m_lock->Release();
 	}
 }

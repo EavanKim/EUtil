@@ -26,7 +26,7 @@ int main()
 	Eavan::EPtr<TestClass> Test1(Test);
 	Eavan::EPtr<TestClass> Test2(Test1);
 	Eavan::EPtr<TestClass> Test3(Test2);
-	Eavan::EPtr<Eavan::EString> TestString(new Eavan::EString(L"TestString"));
+	Eavan::EPtr<Eavan::EString> TestString(new Eavan::EString("TestString"));
 
 }
 

@@ -11,8 +11,9 @@
 */
 
 typedef volatile long		EBOOL;
-typedef char				SCHAR;
-typedef wchar_t				ECHAR;
+typedef char				ECHAR;
+typedef char				CHARS;
+typedef wchar_t				CHARW;
 typedef int32_t				EINT;
 typedef int64_t				EINT64;
 typedef float				EFLOAT;

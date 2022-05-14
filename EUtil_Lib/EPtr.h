@@ -19,11 +19,15 @@ namespace Eavan
 		explicit EPtr();
 		explicit EPtr(C* _ptr);
 		explicit EPtr(EPtr<C, Allocator>& _ptr);
+		explicit EPtr(const EPtr<C, Allocator>& _ptr);
+		explicit EPtr(const EPtr<C, Allocator>&& _ptr);
 		~EPtr();
 
 		C* operator*();
 		C* operator->();
 		void operator=(EBase* _ptr);
+
+		EBOOL IsNull();
 
 	private:
 		void DestroyPtr();
@@ -47,6 +51,22 @@ namespace Eavan
 
 	template<class C, class Allocator>
 	EPtr<C, Allocator>::EPtr(EPtr<C, Allocator>& _ptr)
+		: m_ptr(nullptr)
+	{
+		m_ptr = _ptr.m_ptr;
+		m_ptr->IncreaseReferenceCount();
+	}
+
+	template<class C, class Allocator>
+	EPtr<C, Allocator>::EPtr(const EPtr<C, Allocator>& _ptr)
+		: m_ptr(nullptr)
+	{
+		m_ptr = _ptr.m_ptr;
+		m_ptr->IncreaseReferenceCount();
+	}
+
+	template<class C, class Allocator>
+	EPtr<C, Allocator>::EPtr(const EPtr<C, Allocator>&& _ptr)
 		: m_ptr(nullptr)
 	{
 		m_ptr = _ptr.m_ptr;
@@ -93,6 +113,17 @@ namespace Eavan
 
 			m_ptr = nullptr;
 		}
+	}
+
+	template<class C, class Allocator>
+	inline EBOOL EPtr<C, Allocator>::IsNull()
+	{
+		EBOOL result = 0;
+
+		if (nullptr = m_ptr)
+			InterlocedExchange(&result, 1);
+
+		return result;
 	}
 }
 

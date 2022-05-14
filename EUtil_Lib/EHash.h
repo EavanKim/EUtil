@@ -6,6 +6,8 @@ namespace Eavan
 	{
 	public:
 		EHash(EString& _string);
+		EHash(EString* _string);
+		EHash(ECHAR* _string);
 		~EHash();
 
 		EVINT64 GetHash();
@@ -14,6 +16,8 @@ namespace Eavan
 		EBOOL operator ==(EString& _string);
 
 	private:
+		EINT64 MakeHash();
+
 		EString m_key;
 		EVINT64 m_hash;
 	};

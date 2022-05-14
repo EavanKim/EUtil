@@ -11,25 +11,30 @@ namespace Eavan
 	* @version 0.0.1
 	*
 	*/
+
+	class EHash;
 	class E_F_DLL EString
 	{
 	public:
-		static EString Printf(const wchar_t* _format, ...);
-		static wchar_t* ANSI_TO_UNICODE(const char* _string);
-		static wchar_t* UTF8_TO_UNICODE(const char* _string);
-		static char* UNICODE_TO_UTF8(const wchar_t* _string);
+		static EString Printf(const ECHAR* _format, ...);
+		static EPtr<CHARW> UTF8_TO_UNICODE(const EPtr<ECHAR> _string);
+		static EPtr<ECHAR> UNICODE_TO_UTF8(const EPtr<CHARW> _string);
+		static EPtr<CHARW> ANSI_TO_UNICORD(const EPtr<ECHAR> _string);
+		static EPtr<ECHAR> ANSI_TO_UTF8(const EPtr<ECHAR> _string);
 
 		explicit EString();
-		explicit EString(const wchar_t* _string);
+		explicit EString(const CHARS* _string);
 		~EString();
 
-		const wchar_t* getData();
-		const wchar_t* operator*();
-		char* CreateUTF8();
+		const EPtr<ECHAR> getData();
+		const EPtr<ECHAR> operator*();
+
+		EPtr<CHARW> CreateUNICODE();
+		EHash CreateHash();
 
 	private:
-		EVINT64 m_length;
-		EPtr<wchar_t> m_data;
+		EVINT64 m_length = 0;
+		EPtr<ECHAR> m_data = EPtr<ECHAR>(nullptr);
 	};
 }
 
