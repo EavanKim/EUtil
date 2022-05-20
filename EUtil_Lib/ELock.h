@@ -2,10 +2,12 @@
 
 namespace Eavan
 {
-	class E_F_DLL ELock
+	class EBase;
+	class E_F_DLL ELock : public EBase
 	{
 	public:
 		explicit ELock();
+		explicit ELock(const ELock& _lock);
 		~ELock();
 
 		void Lock();
@@ -13,7 +15,7 @@ namespace Eavan
 		void Release();
 
 	private:
-		CRITICAL_SECTION m_lock;
+		CRITICAL_SECTION* m_lock = nullptr;
 	};
 }
 

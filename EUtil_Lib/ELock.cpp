@@ -4,27 +4,33 @@ namespace Eavan
 {
 	ELock::ELock()
 	{
-		InitializeCriticalSection(&m_lock);
+		m_lock = new CRITICAL_SECTION();
+		InitializeCriticalSection(m_lock);
+	}
+
+	ELock::ELock(const ELock& _lock)
+		: m_lock(_lock.m_lock)
+	{
 	}
 
 	ELock::~ELock()
 	{
-		DeleteCriticalSection(&m_lock);
+		DeleteCriticalSection(m_lock);
 	}
 
 	void ELock::Lock()
 	{
-		EnterCriticalSection(&m_lock);
+		EnterCriticalSection(m_lock);
 	}
 
 	EBOOL ELock::TryLock()
 	{
-		EBOOL result = TryEnterCriticalSection(&m_lock);
+		EBOOL result = TryEnterCriticalSection(m_lock);
 		return result;
 	}
 
 	void ELock::Release()
 	{
-		LeaveCriticalSection(&m_lock);
+		LeaveCriticalSection(m_lock);
 	}
 }

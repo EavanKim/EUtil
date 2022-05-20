@@ -2,7 +2,7 @@
 
 namespace Eavan
 {
-	template<typename T, class Alloc = EAllocator<T>>
+	template<class C>
 	class E_F_DLL ESet : public EBase
 	{
 	public:

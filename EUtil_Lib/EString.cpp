@@ -58,11 +58,11 @@ namespace Eavan
 		return EPtr<ECHAR>(Result);
 	}
 
-	EPtr<CHARW> EString::ANSI_TO_UNICORD( EPtr<ECHAR> _string)
+	EPtr<CHARW> EString::ANSI_TO_UNICORD(EPtr<ECHAR> _string)
 	{
 		wchar_t* Result = nullptr;
-		if (nullptr == _string)
-			return Result;
+		if (_string.IsNull())
+			return EPtr<CHARW>(Result);
 
 		EINT required_cch = MultiByteToWideChar(CP_ACP, 0, *_string, static_cast<EINT>(strlen(*_string)), nullptr, 0);
 		if (0 == required_cch)
@@ -74,7 +74,7 @@ namespace Eavan
 		if (0 == MultiByteToWideChar(CP_ACP, 0, *_string, static_cast<EINT>(strlen(*_string)), Result, required_cch + 1))
 			throw GetLastError();
 
-		return Result;
+		return EPtr<CHARW>(Result);
 	}
 
 	EPtr<ECHAR> EString::ANSI_TO_UTF8(EPtr<ECHAR> _string)
@@ -104,6 +104,14 @@ namespace Eavan
 		errno_t err = memcpy_s(*m_data, (m_length + 2), _string, m_length);
 	}
 
+	EString::EString(EPtr<ECHAR>& _string)
+		: m_length(strlen(*_string))
+		, m_data(new ECHAR[m_length + 2])
+	{
+		ZeroMemory(*m_data, (m_length + 2) * sizeof(ECHAR));
+		errno_t err = memcpy_s(*m_data, (m_length + 2), *_string, m_length);
+	}
+
 	EString::~EString()
 	{
 		m_data = nullptr;
@@ -122,7 +130,7 @@ namespace Eavan
 
 	EPtr<CHARW> EString::CreateUNICODE()
 	{
-		return UTF8_TO_UNICODE(*m_data);
+		return UTF8_TO_UNICODE(m_data);
 	}
 	EHash EString::CreateHash()
 	{

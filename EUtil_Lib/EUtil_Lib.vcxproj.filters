@@ -25,6 +25,18 @@
     <Filter Include="헤더 파일\EUtil\Object\Container">
       <UniqueIdentifier>{863575ff-0132-412d-b067-3c5e43254cab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="헤더 파일\EUtil\Allocator">
+      <UniqueIdentifier>{93e37cfb-1035-4b1d-b53d-715019d5c0f2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\EUtil\Allocator">
+      <UniqueIdentifier>{5ce3c7b6-e728-4cfd-aac9-97ab637e9eae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\EUtil\Object">
+      <UniqueIdentifier>{3dc63d7b-f4a2-4d1b-87df-ad3638811795}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\EUtil\Object\Container">
+      <UniqueIdentifier>{996b91e8-4746-4dd1-86f9-03811c30c293}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="framework.h">
@@ -32,9 +44,6 @@
     </ClInclude>
     <ClInclude Include="pch.h">
       <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="EAllocator.h">
-      <Filter>헤더 파일\EUtil</Filter>
     </ClInclude>
     <ClInclude Include="EDefine.h">
       <Filter>헤더 파일\EUtil</Filter>
@@ -69,40 +78,52 @@
     <ClInclude Include="ESet.h">
       <Filter>헤더 파일\EUtil\Object\Container</Filter>
     </ClInclude>
+    <ClInclude Include="EChunckPtr.h">
+      <Filter>헤더 파일\EUtil\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="EAllocator.h">
+      <Filter>헤더 파일\EUtil\Allocator</Filter>
+    </ClInclude>
+    <ClInclude Include="EAllocator_Heap.h">
+      <Filter>헤더 파일\EUtil\Allocator</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="EAllocator.cpp">
-      <Filter>소스 파일\EUtil</Filter>
-    </ClCompile>
-    <ClCompile Include="EArray.cpp">
-      <Filter>소스 파일\EUtil</Filter>
-    </ClCompile>
-    <ClCompile Include="EBase.cpp">
-      <Filter>소스 파일\EUtil</Filter>
-    </ClCompile>
     <ClCompile Include="EException.cpp">
-      <Filter>소스 파일\EUtil</Filter>
-    </ClCompile>
-    <ClCompile Include="EHash.cpp">
-      <Filter>소스 파일\EUtil</Filter>
-    </ClCompile>
-    <ClCompile Include="ELock.cpp">
-      <Filter>소스 파일\EUtil</Filter>
-    </ClCompile>
-    <ClCompile Include="EScopeLock.cpp">
-      <Filter>소스 파일\EUtil</Filter>
-    </ClCompile>
-    <ClCompile Include="ESet.cpp">
-      <Filter>소스 파일\EUtil</Filter>
-    </ClCompile>
-    <ClCompile Include="EString.cpp">
       <Filter>소스 파일\EUtil</Filter>
     </ClCompile>
     <ClCompile Include="EUtil_Lib.cpp">
       <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="EAllocator.cpp">
+      <Filter>소스 파일\EUtil\Allocator</Filter>
+    </ClCompile>
+    <ClCompile Include="EBase.cpp">
+      <Filter>소스 파일\EUtil\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="EHash.cpp">
+      <Filter>소스 파일\EUtil\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="ELock.cpp">
+      <Filter>소스 파일\EUtil\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="EScopeLock.cpp">
+      <Filter>소스 파일\EUtil\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="EString.cpp">
+      <Filter>소스 파일\EUtil\Object</Filter>
+    </ClCompile>
+    <ClCompile Include="EArray.cpp">
+      <Filter>소스 파일\EUtil\Object\Container</Filter>
+    </ClCompile>
+    <ClCompile Include="ESet.cpp">
+      <Filter>소스 파일\EUtil\Object\Container</Filter>
+    </ClCompile>
+    <ClCompile Include="EAllocator_Heap.cpp">
+      <Filter>소스 파일\EUtil\Allocator</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -3,14 +3,14 @@
 namespace Eavan
 {
 	EHash::EHash(EString& _string)
-		: m_key(*_string)
+		: m_key(_string)
 		, m_hash(MakeHash())
 	{
 
 	}
 
 	EHash::EHash(EString* _string)
-		: m_key(**_string)
+		: m_key(*_string)
 		, m_hash(MakeHash())
 	{
 	}

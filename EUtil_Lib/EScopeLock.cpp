@@ -8,6 +8,11 @@ namespace Eavan
 		m_lock->Lock();
 	}
 
+	EScopeLock::EScopeLock(const EScopeLock& _lock)
+	{
+		m_lock = EPtr<ELock>(_lock.m_lock);
+	}
+
 	EScopeLock::~EScopeLock()
 	{
 		m_lock->Release();

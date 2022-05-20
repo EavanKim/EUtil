@@ -12,87 +12,79 @@ namespace Eavan
 	*
 	*/
 
-	template <class C = EBase, class Allocator = EAllocator<C>>
+	template <class C = EBase>
 	class EPtr
 	{
 	public:
 		explicit EPtr();
 		explicit EPtr(C* _ptr);
-		explicit EPtr(EPtr<C, Allocator>& _ptr);
-		explicit EPtr(const EPtr<C, Allocator>& _ptr);
-		explicit EPtr(const EPtr<C, Allocator>&& _ptr);
+		EPtr(const EPtr<C>& _ptr);
+		EPtr(const EPtr<C>&& _ptr);
 		~EPtr();
 
 		C* operator*();
 		C* operator->();
 		void operator=(EBase* _ptr);
+		void operator=(EPtr<C> _ptr);
 
 		EBOOL IsNull();
 
 	private:
-		void DestroyPtr();
+		virtual void DestroyPtr();
 
 		EBase* m_ptr;
 	};
 
-	template<class C, class Allocator>
-	EPtr<C, Allocator>::EPtr()
+	template<class C>
+	EPtr<C>::EPtr()
 		: m_ptr(nullptr)
 	{
 	}
 
-	template<class C, class Allocator>
-	EPtr<C, Allocator>::EPtr(C* _ptr)
+	template<class C>
+	EPtr<C>::EPtr(C* _ptr)
 		: m_ptr(nullptr)
 	{
 		m_ptr = reinterpret_cast<EBase*>(_ptr);
 		m_ptr->IncreaseReferenceCount();
 	}
 
-	template<class C, class Allocator>
-	EPtr<C, Allocator>::EPtr(EPtr<C, Allocator>& _ptr)
+	template<class C>
+	EPtr<C>::EPtr(const EPtr<C>& _ptr)
 		: m_ptr(nullptr)
 	{
 		m_ptr = _ptr.m_ptr;
 		m_ptr->IncreaseReferenceCount();
 	}
 
-	template<class C, class Allocator>
-	EPtr<C, Allocator>::EPtr(const EPtr<C, Allocator>& _ptr)
+	template<class C>
+	EPtr<C>::EPtr(const EPtr<C>&& _ptr)
 		: m_ptr(nullptr)
 	{
 		m_ptr = _ptr.m_ptr;
 		m_ptr->IncreaseReferenceCount();
 	}
 
-	template<class C, class Allocator>
-	EPtr<C, Allocator>::EPtr(const EPtr<C, Allocator>&& _ptr)
-		: m_ptr(nullptr)
-	{
-		m_ptr = _ptr.m_ptr;
-		m_ptr->IncreaseReferenceCount();
-	}
-
-	template<class C, class Allocator>
-	EPtr<C, Allocator>::~EPtr()
+	template<class C>
+	EPtr<C>::~EPtr()
 	{
 		DestroyPtr();
 	}
 
-	template<class C, class Allocator>
-	inline C* EPtr<C, Allocator>::operator*()
+	template<class C>
+	inline C* EPtr<C>::operator*()
 	{
 		return reinterpret_cast<C*>(m_ptr);
 	}
 
-	template<class C, class Allocator>
-	inline C* EPtr<C, Allocator>::operator->()
+	template<class C>
+	inline C* EPtr<C>::operator->()
 	{
 		return reinterpret_cast<C*>(m_ptr);
 	}
 
-	template<class C, class Allocator>
-	inline void EPtr<C, Allocator>::operator=(EBase* _ptr)
+	template<class C>
+	inline void EPtr<C>::operator=(EBase* _ptr)
 	{
 		DestroyPtr();
 
@@ -102,10 +94,21 @@ namespace Eavan
 			m_ptr->IncreaseReferenceCount();
 	}
 
-	template<class C, class Allocator>
-	inline void EPtr<C, Allocator>::DestroyPtr()
+	template<class C>
+	inline void EPtr<C>::operator=(EPtr<C> _ptr)
 	{
-		if (m_ptr)
+		DestroyPtr();
+
+		m_ptr = reinterpret_cast<EBase*>(*_ptr);
+
+		if (nullptr != m_ptr)
+			m_ptr->IncreaseReferenceCount();
+	}
+
+	template<class C>
+	inline void EPtr<C>::DestroyPtr()
+	{
+		if (nullptr != m_ptr)
 		{
 			EVINT64 refCount = m_ptr->DecreaseReferenceCount();
 			if (!refCount)
@@ -115,13 +118,13 @@ namespace Eavan
 		}
 	}
 
-	template<class C, class Allocator>
-	inline EBOOL EPtr<C, Allocator>::IsNull()
+	template<class C>
+	inline EBOOL EPtr<C>::IsNull()
 	{
 		EBOOL result = 0;
 
-		if (nullptr = m_ptr)
-			InterlocedExchange(&result, 1);
+		if (nullptr == m_ptr)
+			InterlockedExchange(&result, 1);
 
 		return result;
 	}

@@ -154,7 +154,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="EAllocator.h" />
+    <ClInclude Include="EAllocator_Heap.h" />
     <ClInclude Include="EBase.h" />
+    <ClInclude Include="EChunckPtr.h" />
     <ClInclude Include="EDefine.h" />
     <ClInclude Include="EException.h" />
     <ClInclude Include="EHash.h" />
@@ -170,6 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="EAllocator.cpp" />
+    <ClCompile Include="EAllocator_Heap.cpp" />
     <ClCompile Include="EBase.cpp" />
     <ClCompile Include="EException.cpp" />
     <ClCompile Include="EHash.cpp" />

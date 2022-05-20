@@ -24,6 +24,7 @@ namespace Eavan
 
 		explicit EString();
 		explicit EString(const CHARS* _string);
+		explicit EString(EPtr<ECHAR>& _string);
 		~EString();
 
 		const EPtr<ECHAR> getData();
