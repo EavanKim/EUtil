@@ -14,6 +14,8 @@ namespace Eavan
 		EBOOL TryLock();
 		void Release();
 
+		virtual void InitData(EPtr<EInfomation> _info) {};
+
 	private:
 		CRITICAL_SECTION* m_lock = nullptr;
 	};

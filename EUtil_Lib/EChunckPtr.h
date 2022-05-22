@@ -12,6 +12,8 @@ namespace Eavan
 		explicit EChunck(C* _ptrs, EINT64 _count);
 		virtual ~EChunck();
 
+		virtual void InitData(EPtr<EInfomation> _info) {};
+
 	private:
 		EUINT64 m_count;
 		EBase* m_ptrs;

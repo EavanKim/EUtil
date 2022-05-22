@@ -2,21 +2,29 @@
 
 namespace Eavan
 {
-	EAllocator_Heap::EAllocator_Heap()
+	EAllocator_Heap::EAllocator_Heap(EBOOL _NewHeap)
 		: m_heap(INVALID_HANDLE_VALUE)
 	{
-		m_heap = HeapCreate(0, 1024, 1024 * 1024);
-		if (m_heap == INVALID_HANDLE_VALUE || m_heap == NULL)
+		if (_NewHeap)
 		{
-			throw 0;
+			m_heap = GetProcessHeap();
+			if (m_heap == INVALID_HANDLE_VALUE || m_heap == NULL)
+			{
+				throw 0;
+			}
+		}
+		else
+		{
+			m_heap = HeapCreate(0, 1024, 1024 * 1024);
+			if (m_heap == INVALID_HANDLE_VALUE || m_heap == NULL)
+			{
+				throw 0;
+			}
 		}
 	}
 
 	EAllocator_Heap::EAllocator_Heap(const EAllocator_Heap& _allocator)
 		: m_heap(INVALID_HANDLE_VALUE)
-		, m_memorySize(0)
-		, m_allocCount(0)
-		, m_threadID(GetCurrentThreadId())
 	{
 		if (m_heap != INVALID_HANDLE_VALUE)
 		{

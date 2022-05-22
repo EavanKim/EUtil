@@ -11,7 +11,9 @@ namespace Eavan
 	* @version 0.0.1
 	*
 	*/
-
+	template <class C>
+	class EPtr;
+	class EInfomation;
 	class E_F_DLL EBase
 	{
 	public:
@@ -20,6 +22,8 @@ namespace Eavan
 
 		EVINT64 IncreaseReferenceCount();
 		EVINT64 DecreaseReferenceCount();
+
+		virtual void InitData(EPtr<EInfomation> _info) = 0;
 
 	private:
 		EVINT64 m_refCount;

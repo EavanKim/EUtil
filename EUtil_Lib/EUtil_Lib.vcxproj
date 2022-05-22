@@ -156,22 +156,33 @@
     <ClInclude Include="EAllocator.h" />
     <ClInclude Include="EAllocator_Heap.h" />
     <ClInclude Include="EBase.h" />
+    <ClInclude Include="EBptree.h" />
     <ClInclude Include="EChunckPtr.h" />
+    <ClInclude Include="EData.h" />
     <ClInclude Include="EDefine.h" />
+    <ClInclude Include="EInfomation.h" />
     <ClInclude Include="EException.h" />
+    <ClInclude Include="EFramework.h" />
     <ClInclude Include="EHash.h" />
     <ClInclude Include="EInclude.h" />
     <ClInclude Include="ELock.h" />
     <ClInclude Include="EPtr.h" />
     <ClInclude Include="EScopeLock.h" />
     <ClInclude Include="ESet.h" />
+    <ClInclude Include="ESet_Node.h" />
     <ClInclude Include="EString.h" />
     <ClInclude Include="EArray.h" />
     <ClInclude Include="framework.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="IEAllocator.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="EAllocator.cpp" />
+    <ClCompile Include="EBptree.cpp" />
+    <ClCompile Include="EData.cpp" />
+    <ClCompile Include="EInfomation.cpp" />
+    <ClCompile Include="EFramework.cpp" />
+    <ClCompile Include="ESet_Node.cpp" />
+    <ClCompile Include="IEAllocator.cpp" />
     <ClCompile Include="EAllocator_Heap.cpp" />
     <ClCompile Include="EBase.cpp" />
     <ClCompile Include="EException.cpp" />
@@ -188,6 +199,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="static.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

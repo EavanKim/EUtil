@@ -87,6 +87,24 @@
     <ClInclude Include="EAllocator_Heap.h">
       <Filter>헤더 파일\EUtil\Allocator</Filter>
     </ClInclude>
+    <ClInclude Include="IEAllocator.h">
+      <Filter>헤더 파일\EUtil\Allocator</Filter>
+    </ClInclude>
+    <ClInclude Include="EFramework.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="EInfomation.h">
+      <Filter>헤더 파일\EUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="EData.h">
+      <Filter>헤더 파일\EUtil</Filter>
+    </ClInclude>
+    <ClInclude Include="ESet_Node.h">
+      <Filter>헤더 파일\EUtil\Object\Container</Filter>
+    </ClInclude>
+    <ClInclude Include="EBptree.h">
+      <Filter>헤더 파일\EUtil\Object\Container</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -97,9 +115,6 @@
     </ClCompile>
     <ClCompile Include="EUtil_Lib.cpp">
       <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="EAllocator.cpp">
-      <Filter>소스 파일\EUtil\Allocator</Filter>
     </ClCompile>
     <ClCompile Include="EBase.cpp">
       <Filter>소스 파일\EUtil\Object</Filter>
@@ -124,6 +139,27 @@
     </ClCompile>
     <ClCompile Include="EAllocator_Heap.cpp">
       <Filter>소스 파일\EUtil\Allocator</Filter>
+    </ClCompile>
+    <ClCompile Include="static.cpp">
+      <Filter>소스 파일\EUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="IEAllocator.cpp">
+      <Filter>소스 파일\EUtil\Allocator</Filter>
+    </ClCompile>
+    <ClCompile Include="EFramework.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="EInfomation.cpp">
+      <Filter>소스 파일\EUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="EData.cpp">
+      <Filter>소스 파일\EUtil</Filter>
+    </ClCompile>
+    <ClCompile Include="ESet_Node.cpp">
+      <Filter>소스 파일\EUtil\Object\Container</Filter>
+    </ClCompile>
+    <ClCompile Include="EBptree.cpp">
+      <Filter>소스 파일\EUtil\Object\Container</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

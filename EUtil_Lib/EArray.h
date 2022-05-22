@@ -15,6 +15,8 @@ namespace Eavan
 
 		EBOOL At(EINT64 _Index, DataType& _return);
 
+		virtual void InitData(EPtr<EInfomation> _info) {};
+
 	private:
 		EVINT64 m_arrayNum;
 		EVINT64 m_arrayMax;

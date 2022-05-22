@@ -17,7 +17,7 @@ namespace Eavan
 	{
 	public:
 		explicit EPtr();
-		explicit EPtr(C* _ptr);
+		EPtr(C* _ptr);
 		EPtr(const EPtr<C>& _ptr);
 		EPtr(const EPtr<C>&& _ptr);
 		~EPtr();
@@ -112,7 +112,7 @@ namespace Eavan
 		{
 			EVINT64 refCount = m_ptr->DecreaseReferenceCount();
 			if (!refCount)
-				delete m_ptr;
+				IEAllocator::del(m_ptr);
 
 			m_ptr = nullptr;
 		}

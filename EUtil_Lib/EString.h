@@ -17,25 +17,27 @@ namespace Eavan
 	{
 	public:
 		static EString Printf(const ECHAR* _format, ...);
-		static EPtr<CHARW> UTF8_TO_UNICODE(const EPtr<ECHAR> _string);
-		static EPtr<ECHAR> UNICODE_TO_UTF8(const EPtr<CHARW> _string);
-		static EPtr<CHARW> ANSI_TO_UNICORD(const EPtr<ECHAR> _string);
-		static EPtr<ECHAR> ANSI_TO_UTF8(const EPtr<ECHAR> _string);
+		static CHARW* UTF8_TO_UNICODE(const ECHAR* _string);
+		static ECHAR* UNICODE_TO_UTF8(const CHARW* _string);
+		static CHARW* ANSI_TO_UNICORD(const ECHAR* _string);
+		static ECHAR* ANSI_TO_UTF8(const ECHAR* _string);
 
 		explicit EString();
 		explicit EString(const CHARS* _string);
-		explicit EString(EPtr<ECHAR>& _string);
+		explicit EString(ECHAR*& _string);
 		~EString();
 
-		const EPtr<ECHAR> getData();
-		const EPtr<ECHAR> operator*();
+		virtual void InitData(EPtr<EInfomation> _info) {};
 
-		EPtr<CHARW> CreateUNICODE();
+		const ECHAR* getData();
+		const ECHAR* operator*();
+
+		CHARW* CreateUNICODE();
 		EHash CreateHash();
 
 	private:
 		EVINT64 m_length = 0;
-		EPtr<ECHAR> m_data = EPtr<ECHAR>(nullptr);
+		ECHAR* m_data = nullptr;
 	};
 }
 

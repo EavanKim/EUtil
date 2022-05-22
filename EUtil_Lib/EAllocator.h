@@ -12,7 +12,7 @@ namespace Eavan
 	*
 	*/
 
-	class EAllocator
+	class E_F_DLL EAllocator
 	{
 	public:
 		explicit EAllocator()
@@ -34,14 +34,14 @@ namespace Eavan
 		virtual ~EAllocator() {}
 
 		virtual void* allocate(EUINT64 _size) = 0;
-		virtual void* allocate(EUINT64 _size, void** _ptr = nullptr) = 0;
+		virtual void* allocate(EUINT64 _size, void** _ptr) = 0;
 		virtual void reallocate(EUINT64 _size, void** _ptr) = 0;
 		virtual void delocate(void* _ptr) = 0;
 
 		virtual void CheckThreadVaildation(EBOOL& _IsOK) = 0;
 		virtual void CheckMemoryVaildation(void* _ptr, EBOOL& _IsOK) = 0;
 
-	private:
+	protected:
 		EVINT64 m_memorySize = 0;
 		EVINT64 m_allocCount = 0;
 		EVINT64 m_threadID = 0;

@@ -12,10 +12,10 @@ namespace Eavan
 	*
 	*/
 
-	class EAllocator_Heap : public EAllocator
+	class E_F_DLL EAllocator_Heap : public EAllocator
 	{
 	public:
-		explicit EAllocator_Heap();
+		explicit EAllocator_Heap(EBOOL _NewHeap = 0);
 		explicit EAllocator_Heap(const EAllocator_Heap& _allocator);
 
 		virtual ~EAllocator_Heap();
